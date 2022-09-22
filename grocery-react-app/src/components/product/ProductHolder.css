@@ -1,0 +1,8 @@
+.ProductHolderWrapper {
+    /* background-color: red; */
+    /* height: 1000px; */
+    padding: 40px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

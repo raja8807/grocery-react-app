@@ -1,0 +1,120 @@
+.header {
+    /* border: 1px solid black; */
+    box-shadow: 0px 0px 5px 1px grey;
+    background-color: white;
+  background-color: #F6FBF4;
+
+}
+
+.headerWrapper {
+    padding: 10px 0px;
+    display: flex;
+    min-height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+
+.logoSpan {
+    color: #5FD068
+}
+
+.searchBar {
+    padding: 2px 8px;
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f6;
+    border-radius: 15px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.searchBar:hover {
+    /* box-shadow: 0px 0px 5px 1px rgba(128, 128, 128); */
+    box-shadow: 0px 0px 5px 1px #5fd06993;
+}
+
+.searchBox {
+    color: #4B8673;
+    font-size: 18px;
+    border: none;
+    background-color: #f5f5f6;
+    height: 30px;
+    border-radius: 15px;
+    padding: 0px 5px;
+}
+
+.searchBox:active,
+.searchBox:focus {
+    border: none;
+    outline: none;
+}
+
+.navLink {
+    margin-left: 20px;
+    color: #5FD068;
+}
+
+.navLink:hover {
+    color: #4B8673;
+}
+
+.barHolder {
+    width: 30px;
+    height: 25px;
+    /* border: 1px solid red; */
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.barHolder:hover{
+    transform: scale(1.1);
+}
+
+.bar {
+    height: 5px;
+    width: 30px;
+    background-color: #5FD068;
+    border-radius: 5px;
+}
+
+@media screen and (max-width:768px) {
+
+
+    .headerWrapper {
+        display: grid;
+        grid-template-columns: 90% auto;
+    }
+
+    .barHolder {
+        display: flex;
+    }
+
+
+    nav {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        text-align: center;
+        /* background-color: red; */
+    }
+
+
+    .navLink {
+        display: block;
+        margin: 15px 0px;
+        padding: 5px;
+        border-bottom: 1px solid #4b86732a;
+    }
+
+    .navLink:hover{
+        transform: scale(1.2);
+        background-color: #5FD068;
+        color: white;
+    }
+
+    .hidden{
+        display: none;
+    }
+}
