@@ -7,10 +7,14 @@ function ProductHolder() {
         <div className='ProductHolder'>
             <div className='container'>
                 <div className='ProductHolderWrapper'>
-<Product></Product>
-<Product></Product>
-<Product></Product>
-<Product></Product>
+                    <Product></Product>
+                    <Product></Product>
+                    <Product></Product>
+                    <Product></Product>
+                    <Product></Product>
+                    <Product></Product>
+                    <Product></Product>
+                    <Product></Product>
                 </div>
             </div>
         </div>

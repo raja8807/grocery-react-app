@@ -30,6 +30,7 @@ function Header() {
                         <a href='#' className='navLink'>Home</a>
                         <a href='#' className='navLink'>Login</a>
                         <a href='#' className='navLink'>Signup</a>
+                        <a href='#' className='navLink cartIcon' >&#128722;</a>
                     </nav>
 
 
