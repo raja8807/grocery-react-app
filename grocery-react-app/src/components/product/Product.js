@@ -2,13 +2,19 @@ import './Product.css'
 
 import img from '../../assets/images/test.cms'
 
+import { useNavigate } from 'react-router-dom'
+
 function Product(props) {
+
+    const navigateTo = useNavigate()
 
     let finalPrice = parseInt(props.product.price-((props.product.offer/100)*props.product.price))
 
     return (
         <div className='product'>
-            <div className='productImageArea'>
+            <div className='productImageArea' onClick={()=>{
+                navigateTo(`/description/${props.catagory}/${props.product.id}`)
+            }}>
                 <div className='offerBadge'>
                     <h5>{props.product.offer}%</h5>
                     <p>Off</p>

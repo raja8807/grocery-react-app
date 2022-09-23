@@ -1,8 +1,14 @@
 import './Header.css'
 
 import { useState } from 'react';
+import { useSelector,useDispatch } from 'react-redux';
+import { logout } from '../../redux/reducers/loginSlice';
+
 
 function Header() {
+
+  const isLoggedIn = useSelector((state)=> state.loginHandler.isLoggedIn)
+  const dispatch = useDispatch()
 
     const [showNav, setShowNav] = useState(false)
 
@@ -22,13 +28,15 @@ function Header() {
                         <div className='bar'></div>
                     </div>
 
-                    <nav className={showNav ? "nav" : "hidden"}>
+                    <nav className={showNav ? "nav" : "nav hidden"}>
                         <div className='searchBar'>
                             <i className="fa fa-search"></i>
                             <input className='searchBox' placeholder='Search..' type='search' />
                         </div>
                         <a href='#' className='navLink'>Home</a>
-                        <a href='#' className='navLink'>Login</a>
+                        <a href='#' className='navLink' onClick={()=>{
+                            dispatch(logout())
+                        }}>{isLoggedIn ? "Logout" : "Login"}</a>
                         <a href='#' className='navLink'>Signup</a>
                         <a href='#' className='navLink cartIcon' >&#128722;</a>
                     </nav>

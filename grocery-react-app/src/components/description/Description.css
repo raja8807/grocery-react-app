@@ -1,0 +1,60 @@
+.DescriptionWrapper {
+    background-color: white;
+    /* border: 1px solid #ff0000; */
+    /* height: 200px;\ */
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: flex-start;
+    box-shadow: 0px 0px 10px 2px #5fd06983;
+    position: relative;
+}
+
+.Description {
+    padding: 30px;
+}
+
+.DescriptionImageArea {
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.btn {
+    position: absolute;
+    right: 10px;
+    top: 150px;
+    width: 55px;
+    height: 55px;
+    /* border: 1px solid red; */
+    background-color: #F6FBF4;
+    border-radius: 50%;
+    /* font-size: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px; */
+    cursor: pointer;
+}
+
+.btn:hover{
+    box-shadow: 0px 0px 5px 1px grey;
+}
+
+.btn i{
+    transform: scale(2);
+}
+
+
+
+.btnPrev {
+    left: 10px;
+    /* right: 10px; */
+}
+
+@media screen and (max-width : 768px) {
+    .DescriptionWrapper {
+        flex-direction: column;
+    }
+}

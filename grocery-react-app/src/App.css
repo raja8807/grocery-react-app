@@ -17,7 +17,8 @@ a{
 
 .App{
   background-color: #F6FBF4;
-
+/* height: 400px; */
+/* animation: rotate 1s infinite; */
 }
 
 .sectionHeading{
