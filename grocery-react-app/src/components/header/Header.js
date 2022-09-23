@@ -24,7 +24,7 @@ function Header() {
 
                     <nav className={showNav ? "nav" : "hidden"}>
                         <div className='searchBar'>
-                            <i class="fa fa-search"></i>
+                            <i className="fa fa-search"></i>
                             <input className='searchBox' placeholder='Search..' type='search' />
                         </div>
                         <a href='#' className='navLink'>Home</a>

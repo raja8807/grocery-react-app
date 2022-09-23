@@ -1,0 +1,41 @@
+.Catagory{
+    width: 180px;
+    height: 200px;
+    background-color: #F6FBF4;
+    margin: 0px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+    filter: grayscale(0.5);
+    cursor: pointer;
+}
+
+.Catagory:hover{
+    filter: grayscale(0);
+    animation: shake 0.5s ease-in-out;
+    /* transform: scale(1.05); */
+    box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.322);
+}
+
+@keyframes shake{
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(5deg);}
+    50% {transform: rotate(-10deg);}
+    75% {transform: rotate(5deg);}
+    100% {transform: rotate(0deg);}
+}
+
+.CatagoryImage{
+    height: 160px;
+    width: 160px;
+    background-color: white;
+}
+
+.CatagoryImage img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+
+}
