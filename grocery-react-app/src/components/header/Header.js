@@ -3,6 +3,7 @@ import './Header.css'
 import { useState } from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import { logout } from '../../redux/reducers/loginSlice';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -33,7 +34,7 @@ function Header() {
                             <i className="fa fa-search"></i>
                             <input className='searchBox' placeholder='Search..' type='search' />
                         </div>
-                        <a href='#' className='navLink'>Home</a>
+                        <Link to='/' className='navLink'>Home</Link>
                         <a href='#' className='navLink' onClick={()=>{
                             dispatch(logout())
                         }}>{isLoggedIn ? "Logout" : "Login"}</a>

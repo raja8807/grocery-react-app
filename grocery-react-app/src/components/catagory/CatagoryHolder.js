@@ -38,7 +38,7 @@ function CatagoryHolder() {
     return (
         <div className='CatagoryHolder'>
             <div className='container'>
-                <h2 className='sectionHeading'>Catagories</h2>
+                <h2 className='sectionHeading'>Shop By Catagories</h2>
 
                 <div className='CatagoryHolderWrapper'>
                     {

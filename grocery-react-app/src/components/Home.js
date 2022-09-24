@@ -4,9 +4,9 @@ import TopDeals from './topDeals/TopDeals'
 
 function Home() {
   return (
-    <div>
+    <>
         <TopDeals/>
-    </div>
+    </>
   )
 }
 

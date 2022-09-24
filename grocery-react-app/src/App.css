@@ -24,4 +24,5 @@ a{
 .sectionHeading{
   text-align: center;
   padding: 30px 0px;
+  text-transform: uppercase;
 }

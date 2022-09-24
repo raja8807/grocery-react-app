@@ -19,7 +19,7 @@ export const loginSlice = createSlice({
     
 })
 
-console.log(loginSlice);
+// console.log(loginSlice);
 
 export const {login , logout} = loginSlice.actions
 export default loginSlice.reducer
