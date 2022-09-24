@@ -13,7 +13,7 @@ function Description() {
     const [product,setProduct]= useState({})
 
     useEffect(()=>{
-        fetch(`https://632d52b4519d17fb53bb9bd0.mockapi.io/${params.catagory}/${params.id}`).then((response)=>{
+        fetch(`https://632d52b4519d17fb53bb9bd0.mockapi.io/${params.category}/${params.id}`).then((response)=>{
             if(response.ok){
                 return response.json()
             }
@@ -39,13 +39,13 @@ setProduct(product)
                     </div>
 
                     <div className='btn btnNext' onClick={()=>{
-                        navigateTo(`/description/${params.catagory}/${parseInt(params.id)+1}`)
+                        navigateTo(`/description/${params.category}/${parseInt(params.id)+1}`)
                     }}>
                     <i className='fa fa-angle-right'></i>
                     </div>
                     <div className='btn btnPrev' onClick={()=>{
                         if(parseInt(params.id)>1){
-                            navigateTo(`/description/${params.catagory}/${parseInt(params.id)-1}`)
+                            navigateTo(`/description/${params.category}/${parseInt(params.id)-1}`)
                         }
                     }}>
                     <i className='fa fa-angle-left'></i>

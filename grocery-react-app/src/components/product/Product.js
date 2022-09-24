@@ -13,8 +13,8 @@ function Product(props) {
     return (
         <div className='product'>
             <div className='productImageArea' onClick={()=>{
-                if(props.catagory != "Top Deals"){
-                    navigateTo(`/description/${props.catagory}/${props.product.id}`)
+                if(props.category != "Top Deals"){
+                    navigateTo(`/description/${props.category}/${props.product.id}`)
                 }else{
                     navigateTo(`/description/${props.product.category}/${props.product.id}`)
                     // console.log(props.product);

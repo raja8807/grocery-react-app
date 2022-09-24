@@ -1,20 +1,20 @@
 import React from 'react'
-import './Catagory.css'
+import './Category.css'
 // import img from '../../assets/images/test.cms'
 
 import { useNavigate, Link } from 'react-router-dom'
 
-function Catagory(props) {
+function Category(props) {
 
     const navigateTo = useNavigate()
 
     return (
-        <div className='Catagory'>
+        <div className='category'>
             <Link to={'/store/'+props.path}>
-            <div className='CatagoryImage'>
+            <div className='categoryImage'>
 <img src={props.image} alt='img'/>
             </div>
-            <div className='CatagoryName'>
+            <div className='categoryName'>
 <h4>{props.name}</h4>
             </div>
             </Link>
@@ -22,4 +22,4 @@ function Catagory(props) {
     )
 }
 
-export default Catagory
+export default Category

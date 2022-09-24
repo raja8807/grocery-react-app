@@ -3,7 +3,7 @@ import './App.css';
 // Componets
 import Header from './components/header/Header';
 import ProductHolder from './components/product/ProductHolder';
-import CatagoryHolder from './components/catagory/CatagoryHolder';
+import CategoryHolder from './components/category/CategoryHolder';
 // import TopDeals from './components/topDeals/TopDeals';
 import Home from './components/Home';
 import Description from './components/description/Description';
@@ -33,11 +33,11 @@ function App() {
       <button onClick={() => {
         dispatch(logout())
       }}>Logout</button>
-      <CatagoryHolder />
+      <CategoryHolder />
       <Routes>
         <Route index element={<Home></Home>} />
-        <Route path='store/:catagory' element={<ProductHolder />} />
-        <Route path='description/:catagory/:id' element={<Description />} />
+        <Route path='store/:category' element={<ProductHolder />} />
+        <Route path='description/:category/:id' element={<Description />} />
       </Routes>
 
 

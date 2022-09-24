@@ -46,7 +46,7 @@ function TopDeals() {
                 <div className='TopDealHolderWrapper'>
                     {
                         topDeals.map((item)=>{
-                            return <Product key={Math.random()} product={item} catagory={"Top Deals"}/>
+                            return <Product key={Math.random()} product={item} category={"Top Deals"}/>
                         })
                     }
                 </div>

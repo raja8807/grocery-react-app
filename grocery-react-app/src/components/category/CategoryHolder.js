@@ -1,15 +1,15 @@
 import React from 'react'
 
-import './CatagoryHolder.css'
+import './CategoryHolder.css'
 
-import Catagory from './Catagory'
+import Category from './Category'
 
-import fruits from '../../assets/images/catagory/fruits.png'
-import vegetables from '../../assets/images/catagory/vegetables.png'
-import meats from '../../assets/images/catagory/meats.png'
-import snacks from '../../assets/images/catagory/snacks.png'
+import fruits from '../../assets/images/category/fruits.png'
+import vegetables from '../../assets/images/category/vegetables.png'
+import meats from '../../assets/images/category/meats.png'
+import snacks from '../../assets/images/category/snacks.png'
 
-function CatagoryHolder() {
+function CategoryHolder() {
 
     const catagories = [
         {
@@ -36,14 +36,14 @@ function CatagoryHolder() {
     ]
 
     return (
-        <div className='CatagoryHolder'>
+        <div className='categoryHolder'>
             <div className='container'>
-                <h2 className='sectionHeading'>Shop By Catagories</h2>
+                <h2 className='sectionHeading'>Shop By Categories</h2>
 
-                <div className='CatagoryHolderWrapper'>
+                <div className='categoryHolderWrapper'>
                     {
                         catagories.map((cat) => {
-                            return <Catagory key={cat.id} name={cat.name} image={cat.image} path={cat.id}/>
+                            return <Category key={cat.id} name={cat.name} image={cat.image} path={cat.id}/>
                         })
                     }
                 </div>
@@ -52,4 +52,4 @@ function CatagoryHolder() {
     )
 }
 
-export default CatagoryHolder
+export default CategoryHolder;

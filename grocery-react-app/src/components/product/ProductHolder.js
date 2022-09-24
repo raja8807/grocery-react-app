@@ -8,10 +8,10 @@ import { useEffect, useState } from 'react';
 function ProductHolder() {
     let params = useParams()
     const [products, setProducts] = useState([])
-    // const [currentCatagory,setCatagory] = useState(catagory)
+    // const [currentcategory,setcategory] = useState(category)
 
     useEffect(() => {
-        fetch('https://632d52b4519d17fb53bb9bd0.mockapi.io/' + params.catagory).then((response) => {
+        fetch('https://632d52b4519d17fb53bb9bd0.mockapi.io/' + params.category).then((response) => {
             if (response.ok) {
                 return response.json()
             }
@@ -26,11 +26,11 @@ function ProductHolder() {
     return (
         <div className='ProductHolder'>
             <div className='container'>
-                <h2 className='sectionHeading'>{params.catagory}</h2>
+                <h2 className='sectionHeading'>{params.category}</h2>
                 <div className='ProductHolderWrapper'>
                     {
                         products.map((item) => {
-                            return <Product key={Math.random()} product={item} catagory={params.catagory}/>
+                            return <Product key={Math.random()} product={item} category={params.category}/>
                         })
                     }
                 </div>
