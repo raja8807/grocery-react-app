@@ -21,17 +21,17 @@ function CategoryHolder() {
         {
             id: "vegetables",
             name: "Vegetables",
-            image : vegetables
+            image: vegetables
         },
         {
             id: "snacks",
             name: "Snacks",
-            image:snacks
+            image: snacks
         },
         {
             id: "meats",
             name: "Meats",
-            image:meats
+            image: meats
         }
     ]
 
@@ -39,11 +39,10 @@ function CategoryHolder() {
         <div className='categoryHolder'>
             <div className='container'>
                 <h2 className='sectionHeading'>Shop By Categories</h2>
-
                 <div className='categoryHolderWrapper'>
                     {
                         catagories.map((cat) => {
-                            return <Category key={cat.id} name={cat.name} image={cat.image} path={cat.id}/>
+                            return <Category key={cat.id} name={cat.name} image={cat.image} path={cat.id} />
                         })
                     }
                 </div>

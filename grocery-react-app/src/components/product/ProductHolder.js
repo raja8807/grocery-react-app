@@ -16,7 +16,7 @@ function ProductHolder() {
     useEffect(() => {
         setIsLoading(true)
         setAscActive(true)
-        fetch('https://my-json-server.typicode.com/raja8807/grocery-react-app/' + params.category).then((response) => {
+        fetch('https://my-json-server.typicode.com/raja8807/grocery-app-data-' + params.category +"/" + params.category).then((response) => {
             if (response.ok) {
                 return response.json()
             }
@@ -63,7 +63,7 @@ function ProductHolder() {
         setIsLoading(true)
 
         let x = e.target.value
-        fetch('https://my-json-server.typicode.com/raja8807/grocery-react-app/' + params.category).then((response) => {
+        fetch('https://my-json-server.typicode.com/raja8807/grocery-app-data-'+params.category+"/"+ params.category).then((response) => {
             if (response.ok) {
                 return response.json()
             }
@@ -116,7 +116,9 @@ function ProductHolder() {
                         }} />
                     </div>
 
-                    <h4 className='productLength'>Showing {products.length} products</h4>
+                    {
+                        !isLoading && (products.length==0 ? <h4 className='productLength' id='error'>Nothing To Show</h4> : <h4 className='productLength'>Showing {products.length} products</h4>)
+                    }
 
                     <div className='sortWrapper'>
                         <div className={`sortBtn ${isAscActive && "sortActive"}`} onClick={() => {

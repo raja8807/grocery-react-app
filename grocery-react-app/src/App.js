@@ -7,6 +7,7 @@ import CategoryHolder from './components/category/CategoryHolder';
 // import TopDeals from './components/topDeals/TopDeals';
 import Home from './components/Home';
 import Description from './components/description/Description';
+import NotFound from './components/NotFound';
 
 // Hooks
 import { Route, Routes } from 'react-router-dom';
@@ -38,6 +39,7 @@ function App() {
         <Route index element={<Home></Home>} />
         <Route path='store/:category' element={<ProductHolder />} />
         <Route path='description/:category/:id' element={<Description />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
 
 

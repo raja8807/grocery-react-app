@@ -6,7 +6,6 @@
     position: sticky;
     top: 0;
     z-index: 10;
-
 }
 
 .headerWrapper {
@@ -16,6 +15,18 @@
     align-items: center;
     justify-content: space-between;
     /* border: 1px solid black; */
+}
+
+.headerLogo:hover{
+    transform: scale(1.1);
+    animation: rotate3d 1s ease-in-out;
+}
+
+@keyframes rotate3d{
+    0%{transform: rotate3d(0,1,0,0deg);}
+    100%{transform: rotate3d(0,1,0,359deg);}
+    /* 0%{transform: scale(1);}
+    100%{transform: scale(2);} */
 }
 
 .logoSpan {

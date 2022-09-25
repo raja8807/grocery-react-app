@@ -1,5 +1,5 @@
 {
-    "fruits": [
+    "snacks": [
         {
             "id": "1",
             "name": "Apple",
@@ -7,7 +7,7 @@
             "offer": 5,
             "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
             "image": "https://www.jiomart.com/images/product/600x600/590004487/apple-indian-6-pcs-pack-approx-750-g-950-g-product-images-o590004487-p590004487-0-202203170227.jpg",
-            "category": "fruits",
+            "category": "snacks",
             "veg": true
         },
         {
@@ -17,7 +17,7 @@
             "offer": 17,
             "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
             "image": "https://www.jiomart.com/images/product/600x600/590006806/mosambi-3-kg-pack-product-images-o590006806-p590032918-0-202203150754.jpg",
-            "category": "fruits",
+            "category": "snacks",
             "veg": true
         },
         {
@@ -27,7 +27,7 @@
             "offer": 22,
             "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
             "image": "https://www.jiomart.com/images/product/600x600/590000025/orange-imported-1-kg-product-images-o590000025-p590000025-0-202203171007.jpg",
-            "category": "fruits",
+            "category": "snacks",
             "veg": true
         },
         {
@@ -37,7 +37,7 @@
             "offer": 13,
             "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
             "image": "https://www.jiomart.com/images/product/600x600/590001270/pears-green-imported-3-pcs-pack-product-images-o590001270-p590040932-0-202203170454.jpg",
-            "category": "fruits",
+            "category": "snacks",
             "veg": true
         },
         {
@@ -47,7 +47,7 @@
             "offer": 7,
             "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
             "image": "https://www.jiomart.com/images/product/600x600/590009785/tender-coconut-3-pcs-product-images-o590009785-p591041745-0-202203171040.jpg",
-            "category": "fruits",
+            "category": "snacks",
             "veg": true
         },
         {
@@ -57,7 +57,7 @@
             "offer": 4,
             "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
             "image": "https://www.jiomart.com/images/product/600x600/590001655/banana-yellaki-12-pcs-approx-750-g-1000-g-product-images-o590001655-p590041069-0-202203152123.jpg",
-            "category": "fruits",
+            "category": "snacks",
             "veg": true
         },
         {
@@ -67,7 +67,7 @@
             "offer": 27,
             "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
             "image": "https://www.jiomart.com/images/product/600x600/590002744/dates-imported-approx-400-g-500-g-product-images-o590002744-p590002744-0-202203170240.jpg",
-            "category": "fruits",
+            "category": "snacks",
             "veg": true
         },
         {
@@ -77,7 +77,7 @@
             "offer": 57,
             "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
             "image": "https://www.jiomart.com/images/product/600x600/590001268/pomegranate-economy-6-pcs-pack-product-images-o590001268-p590485022-0-202203150746.jpg",
-            "category": "fruits",
+            "category": "snacks",
             "veg": true
         },
         {
@@ -87,7 +87,7 @@
             "offer": 11,
             "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
             "image": "https://www.jiomart.com/images/product/600x600/590001570/plum-imported-4-pcs-product-images-o590001570-p593727906-0-202209121634.jpg",
-            "category": "fruits",
+            "category": "snacks",
             "veg": true
         },
         {
@@ -97,7 +97,7 @@
             "offer": 19,
             "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
             "image": "https://www.jiomart.com/images/product/600x600/590003068/sapota-6-pcs-pack-approx-450-g-550-g-product-images-o590003068-p590309513-0-202208101342.jpg",
-            "category": "fruits",
+            "category": "snacks",
             "veg": true
         }
     ]

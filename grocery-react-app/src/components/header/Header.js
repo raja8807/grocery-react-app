@@ -18,7 +18,10 @@ function Header() {
             <div className='container'>
                 <div className='headerWrapper'>
                     <div className='headerLogo'>
+                        <Link to='/'>
+            
                         <h1 className='logo'><span className='logoSpan'>Gro</span>fe<span className='logoSpan'>'</span></h1>
+                        </Link>
                     </div>
 
                     <div className='barHolder' onClick={() => {
