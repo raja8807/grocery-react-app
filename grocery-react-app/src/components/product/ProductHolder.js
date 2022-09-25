@@ -13,7 +13,7 @@ function ProductHolder() {
 
     useEffect(() => {
         setAscActive(true)
-        fetch('https://my-json-server.typicode.com/raja8807/grocery-db/' + params.category).then((response) => {
+        fetch('https://my-json-server.typicode.com/raja8807/grocery-react-app/' + params.category).then((response) => {
             if (response.ok) {
                 return response.json()
             }
