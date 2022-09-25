@@ -1,4 +1,5 @@
 import './ProductHolder.css'
+import loading from '../../assets/loading.gif'
 
 import Product from './Product'
 
@@ -9,9 +10,11 @@ function ProductHolder() {
     let params = useParams()
     const [products, setProducts] = useState([])
     const [isAscActive, setAscActive] = useState(true)
+    const [isLoading, setIsLoading] = useState(true)
     // const [currentcategory,setcategory] = useState(category)
 
     useEffect(() => {
+        setIsLoading(true)
         setAscActive(true)
         fetch('https://my-json-server.typicode.com/raja8807/grocery-react-app/' + params.category).then((response) => {
             if (response.ok) {
@@ -27,6 +30,9 @@ function ProductHolder() {
                 setProducts(data.sort((a, b) => {
                     return a.finalPrice - b.finalPrice
                 }))
+
+                setIsLoading(false)
+
             }
         })
     }, [params])
@@ -53,6 +59,49 @@ function ProductHolder() {
         }
     }
 
+    function search(e) {
+        setIsLoading(true)
+
+        let x = e.target.value
+        fetch('https://my-json-server.typicode.com/raja8807/grocery-react-app/' + params.category).then((response) => {
+            if (response.ok) {
+                return response.json()
+            }
+            return false
+        }).then((data) => {
+            if (data) {
+                data.forEach((item) => {
+                    item.finalPrice = item.price - ((item.offer / 100) * item.price)
+                })
+
+                setProducts(data.filter((item) => {
+                    return item.name.toLowerCase().includes(x)
+                }))
+
+                // setProducts(products.sort((a, b) => {
+                //     return a.finalPrice - b.finalPrice
+                // }))
+
+                if (isAscActive) {
+                    setProducts((prev) => {
+                        return prev.sort((a, b) => {
+                            return a.finalPrice - b.finalPrice
+                        })
+                    })
+                } else {
+                    setProducts((prev) => {
+                        return prev.sort((a, b) => {
+                            return b.finalPrice - a.finalPrice
+                        })
+                    })
+                }
+                setIsLoading(false)
+            }
+
+
+        })
+    }
+
     return (
         <div className='ProductHolder'>
             <div className='container'>
@@ -62,8 +111,12 @@ function ProductHolder() {
 
                     <div className='searchBar' id='filterSearch'>
                         <i className="fa fa-search"></i>
-                        <input className='searchBox' placeholder='Search..' type='search' />
+                        <input className='searchBox' placeholder='Search..' type='search' onChange={(e) => {
+                            search(e)
+                        }} />
                     </div>
+
+                    <h4 className='productLength'>Showing {products.length} products</h4>
 
                     <div className='sortWrapper'>
                         <div className={`sortBtn ${isAscActive && "sortActive"}`} onClick={() => {
@@ -79,9 +132,11 @@ function ProductHolder() {
 
                 <div className='ProductHolderWrapper'>
                     {
-                        products.map((item) => {
-                            return <Product key={Math.random()} product={item} category={params.category} />
-                        })
+                        isLoading ?
+                            <img src={loading} /> :
+                            products.map((item) => {
+                                return <Product key={Math.random()} product={item} category={params.category} />
+                            })
                     }
                 </div>
             </div>

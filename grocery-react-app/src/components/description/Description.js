@@ -13,7 +13,7 @@ function Description() {
     const [product,setProduct]= useState({})
 
     useEffect(()=>{
-        fetch(`https://632d52b4519d17fb53bb9bd0.mockapi.io/${params.category}/${params.id}`).then((response)=>{
+        fetch(`https://my-json-server.typicode.com/raja8807/grocery-react-app/${params.category}/${params.id}`).then((response)=>{
             if(response.ok){
                 return response.json()
             }
@@ -29,7 +29,7 @@ setProduct(product)
             <div className='container'>
                 <div className='DescriptionWrapper'>
                     <div className='DescriptionImageArea'>
-
+<img src={product.image} alt={product.name}/>
                     </div>
                     <div className='DescriptionDetailsArea'>
                         <h1>{product.name}</h1>

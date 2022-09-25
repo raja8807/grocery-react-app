@@ -44,7 +44,7 @@ function TopDeals() {
 
     useEffect(()=>{
         setTopDeals([])
-        fetch('https://632d52b4519d17fb53bb9bd0.mockapi.io/fruits').then((response)=>{
+        fetch('https://my-json-server.typicode.com/raja8807/grocery-react-app/fruits').then((response)=>{
             if(response.ok){
                 return response.json()
             }
@@ -57,7 +57,7 @@ function TopDeals() {
             return [...prev,sorted[0]]
            })
         }).then(()=>{
-            fetch('https://632d52b4519d17fb53bb9bd0.mockapi.io/vegetables').then((response)=>{
+            fetch('https://my-json-server.typicode.com/raja8807/grocery-react-app/vegetables').then((response)=>{
             if(response.ok){
                 return response.json()
             }
@@ -71,7 +71,7 @@ function TopDeals() {
                })
         })
         }).then(()=>{
-            fetch('https://632d52b4519d17fb53bb9bd0.mockapi.io/snacks').then((response)=>{
+            fetch('https://my-json-server.typicode.com/raja8807/grocery-react-app/fruits').then((response)=>{
             if(response.ok){
                 return response.json()
             }
@@ -85,7 +85,7 @@ function TopDeals() {
                })
         })
         }).then(()=>{
-            fetch('https://632d52b4519d17fb53bb9bd0.mockapi.io/meats').then((response)=>{
+            fetch('https://my-json-server.typicode.com/raja8807/grocery-react-app/vegetables').then((response)=>{
             if(response.ok){
                 return response.json()
             }

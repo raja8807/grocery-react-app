@@ -8,14 +8,16 @@ function Product(props) {
 
     const navigateTo = useNavigate()
 
-    let finalPrice = parseInt(props.product.price-((props.product.offer/100)*props.product.price))
+    let finalPrice = parseInt(props.product.price - ((props.product.offer / 100) * props.product.price))
+
+    console.log(props.product.veg);
 
     return (
         <div className='product'>
-            <div className='productImageArea' onClick={()=>{
-                if(props.category != "Top Deals"){
+            <div className='productImageArea' onClick={() => {
+                if (props.category != "Top Deals") {
                     navigateTo(`/description/${props.category}/${props.product.id}`)
-                }else{
+                } else {
                     navigateTo(`/description/${props.product.category}/${props.product.id}`)
                     // console.log(props.product);
                 }
@@ -24,6 +26,13 @@ function Product(props) {
                     <h5>{props.product.offer}%</h5>
                     <p>Off</p>
                 </div>
+
+                <div className={`dotOuter ${props.product.veg ? "vegOuter" : "nonVegOuter"}`}>
+                    <div className={`dotInner ${props.product.veg ? "vegInner" : "nonVegInner"}`}>
+
+                    </div>
+                </div>
+
                 <img src={props.product.image} />
             </div>
             <div className='productDetailsArea'>
