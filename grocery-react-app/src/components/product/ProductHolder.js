@@ -13,7 +13,7 @@ function ProductHolder() {
 
     useEffect(() => {
         setAscActive(true)
-        fetch('https://632d52b4519d17fb53bb9bd0.mockapi.io/' + params.category).then((response) => {
+        fetch('https://my-json-server.typicode.com/raja8807/grocery-db/' + params.category).then((response) => {
             if (response.ok) {
                 return response.json()
             }

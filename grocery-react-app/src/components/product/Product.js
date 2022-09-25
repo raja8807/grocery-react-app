@@ -24,13 +24,13 @@ function Product(props) {
                     <h5>{props.product.offer}%</h5>
                     <p>Off</p>
                 </div>
-                <img src={img} />
+                <img src={props.product.image} />
             </div>
             <div className='productDetailsArea'>
-                <h2>
+                <h2 className='productName'>
                     {props.product.name}
                 </h2>
-                <h3>
+                <h3 className='productPrice'>
                     Rs.{finalPrice}
                 </h3>
                 <p className='productMRP'>M.R.P <span className='productMRP-striked'>Rs.{props.product.price}</span ><span className='save'> You Save Rs.{props.product.price - finalPrice}</span></p>

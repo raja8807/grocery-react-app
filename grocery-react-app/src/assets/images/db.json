@@ -1,0 +1,25 @@
+{
+    "fruits": [
+        {
+            "id": "1",
+            "name": "Apple",
+            "price": "440.00",
+            "offer": 5,
+            "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+            "image": "https://www.jiomart.com/images/product/600x600/590004487/apple-indian-6-pcs-pack-approx-750-g-950-g-product-images-o590004487-p590004487-0-202203170227.jpg",
+            "category": "fruits",
+            "veg" : true
+        },
+
+        {
+            "id": "2",
+            "name": "Orange",
+            "price": "440.00",
+            "offer": 5,
+            "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+            "image": "https://www.jiomart.com/images/product/600x600/590004487/apple-indian-6-pcs-pack-approx-750-g-950-g-product-images-o590004487-p590004487-0-202203170227.jpg",
+            "category": "fruits",
+            "veg" : true
+        }
+    ]
+}

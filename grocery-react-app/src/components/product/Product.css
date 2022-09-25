@@ -35,7 +35,7 @@
 }
 
 .save {
-    color: #4B8673;
+    color: #5FD068;
     font-size: 12px;
     font-weight: bolder;
     margin-left: 5px;
@@ -93,6 +93,15 @@
 
 .productImageArea img:hover {
     transform: scale(1.1);
+}
+
+.productName{
+    font-size: 18px;
+}
+
+.productPrice{
+    font-size: 18px;
+    color: #4B8673;
 }
 
 @keyframes rotate {
