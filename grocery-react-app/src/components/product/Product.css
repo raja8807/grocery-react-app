@@ -77,10 +77,13 @@
     align-items: center;
     color: white;
     background-color: red;
+    border: 2px dotted yellow;
+    /* padding: 5px; */
 }
 
 .offerBadge:hover {
     animation: rotate 0.4s ease-in-out;
+    transform: scale(1.05);
 }
 
 .productImageArea img {
