@@ -35,6 +35,8 @@ function CategoryHolder() {
         }
     ]
 
+
+
     return (
         <div className='categoryHolder'>
             <div className='container'>

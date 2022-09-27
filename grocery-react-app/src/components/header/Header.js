@@ -37,12 +37,15 @@ function Header() {
                             <i className="fa fa-search"></i>
                             <input className='searchBox' placeholder='Search..' type='search' />
                         </div>
-                        <Link to='/' className='navLink'>Home</Link>
+                        <Link to='/' className='navLink' onClick={()=>{
+                            setShowNav(!showNav)
+                        }}>Home</Link>
                         <a href='#' className='navLink' onClick={()=>{
+                            setShowNav(!showNav)
                             dispatch(logout())
                         }}>{isLoggedIn ? "Logout" : "Login"}</a>
                         <a href='#' className='navLink'>Signup</a>
-                        <a href='#' className='navLink cartIcon' >&#128722;</a>
+                        <a href='/cart' className='navLink cartIcon'>&#128722;</a>
                     </nav>
 
 

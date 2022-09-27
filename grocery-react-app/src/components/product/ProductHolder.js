@@ -7,11 +7,16 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function ProductHolder() {
+
     let params = useParams()
+    console.log(params);
     const [products, setProducts] = useState([])
     const [isAscActive, setAscActive] = useState(true)
     const [isLoading, setIsLoading] = useState(true)
+
+    
     // const [currentcategory,setcategory] = useState(category)
+
 
     useEffect(() => {
         setIsLoading(true)

@@ -1,0 +1,34 @@
+.CartHolder{
+    padding: 40px 0px;
+}
+.CartContainer{
+    background-color: white;
+    margin-bottom: 30px;
+    width: 60%;
+}
+
+.PaymentContainer{
+    width: 38%;
+    position: sticky;
+}
+
+.CartHolderWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width : 780px) {
+    .CartHolderWrapper{
+        /* display: flex; */
+        /* justify-content: space-between; */
+        flex-direction: column;
+    }
+
+    .CartContainer{
+        width: 100%;
+    }
+    
+    .PaymentContainer{
+        width: 100%;
+    }
+}

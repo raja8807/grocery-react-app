@@ -4,6 +4,7 @@
     background-color: white;
     background-color: #F6FBF4;
     position: sticky;
+    /* width: 200px; */
     top: 0;
     z-index: 10;
 }

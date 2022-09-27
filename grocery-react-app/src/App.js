@@ -7,6 +7,7 @@ import CategoryHolder from './components/category/CategoryHolder';
 // import TopDeals from './components/topDeals/TopDeals';
 import Home from './components/Home';
 import Description from './components/description/Description';
+import CartHolder from './components/cart/CartHolder';
 import NotFound from './components/NotFound';
 
 // Hooks
@@ -39,6 +40,7 @@ function App() {
         <Route index element={<Home></Home>} />
         <Route path='store/:category' element={<ProductHolder />} />
         <Route path='description/:category/:id' element={<Description />} />
+        <Route path='cart' element={<CartHolder/>}/>
         <Route path='*' element={<NotFound />} />
       </Routes>
 

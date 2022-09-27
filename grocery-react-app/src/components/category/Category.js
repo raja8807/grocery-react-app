@@ -9,13 +9,12 @@ function Category(props) {
 
     const navigateTo = useNavigate()
 
-    const[isActive , setActive] = useState(false)
-
+    // let currentCatagory = window.location.pathname.slice(7);
+    let currentCatagory = window.location.pathname.split("/")[2]
+    let isActive =  currentCatagory == props.name.toLowerCase()
 
     return (
-        <div className={`category ${isActive && "active"}`} onClick={()=>{
-            setActive(true)
-        }}>
+        <div className={`category ${isActive&&'active'}`}>
             <Link to={'/store/' + props.path}>
                 <div className='categoryImage'>
                     <img src={props.image} alt='img' />

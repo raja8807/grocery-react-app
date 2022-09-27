@@ -10,8 +10,6 @@ function Product(props) {
 
     let finalPrice = parseInt(props.product.price - ((props.product.offer / 100) * props.product.price))
 
-    console.log(props.product.veg);
-
     return (
         <div className='product'>
             <div className='productImageArea' onClick={() => {
