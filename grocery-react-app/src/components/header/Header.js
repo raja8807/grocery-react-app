@@ -1,15 +1,20 @@
 import './Header.css'
 
 import { useState } from 'react';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../redux/reducers/loginSlice';
 import { Link } from 'react-router-dom';
+import CartIcon from '../cart/CartIcon';
+import { useNavigate } from 'react-router-dom';
 
 
 function Header() {
 
-  const isLoggedIn = useSelector((state)=> state.loginHandler.isLoggedIn)
-  const dispatch = useDispatch()
+    const navigateTo = useNavigate()
+
+    const isLoggedIn = useSelector((state) => state.loginHandler.isLoggedIn)
+    const user = useSelector((state) => state.loginHandler.user)
+    const dispatch = useDispatch()
 
     const [showNav, setShowNav] = useState(false)
 
@@ -19,8 +24,8 @@ function Header() {
                 <div className='headerWrapper'>
                     <div className='headerLogo'>
                         <Link to='/'>
-            
-                        <h1 className='logo'><span className='logoSpan'>Gro</span>fe<span className='logoSpan'>'</span></h1>
+
+                            <h1 className='logo'><span className='logoSpan'>Gro</span>fe<span className='logoSpan'>'</span></h1>
                         </Link>
                     </div>
 
@@ -37,15 +42,18 @@ function Header() {
                             <i className="fa fa-search"></i>
                             <input className='searchBox' placeholder='Search..' type='search' />
                         </div>
-                        <Link to='/' className='navLink' onClick={()=>{
+                        <Link to='/' className='navLink' onClick={() => {
                             setShowNav(!showNav)
                         }}>Home</Link>
-                        <a href='#' className='navLink' onClick={()=>{
+                        {isLoggedIn ? <Link className='navLink' onClick={() => {
                             setShowNav(!showNav)
                             dispatch(logout())
-                        }}>{isLoggedIn ? "Logout" : "Login"}</a>
+                        }}>Logout</Link> : <Link className='navLink' to={'login'} onClick={() => {
+                            setShowNav(!showNav)
+                        }}>Login</Link>}
                         <a href='#' className='navLink'>Signup</a>
-                        <a href='/cart' className='navLink cartIcon'>&#128722;</a>
+                        <Link to='/cart' className='navLink cartIcon'><CartIcon /></Link>
+
                     </nav>
 
 

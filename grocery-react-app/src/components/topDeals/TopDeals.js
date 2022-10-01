@@ -103,7 +103,11 @@ function TopDeals() {
                 })
             })
         }).then(() => {
+            topDeals.forEach((item)=>{
+                item.finalPrice = parseInt(item.price - ((item.offer/100)*item.price))
+            })
             setIsLoading(false)
+            
         })
     }, [])
 

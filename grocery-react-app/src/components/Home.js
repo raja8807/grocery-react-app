@@ -1,11 +1,13 @@
 import React from 'react'
 
 import TopDeals from './topDeals/TopDeals'
+import CategoryHolder from './category/CategoryHolder'
 
 function Home() {
   return (
     <>
-        <TopDeals/>
+      <CategoryHolder />
+      <TopDeals />
     </>
   )
 }

@@ -8,11 +8,12 @@ import CategoryHolder from './components/category/CategoryHolder';
 import Home from './components/Home';
 import Description from './components/description/Description';
 import CartHolder from './components/cart/CartHolder';
+import Login from './components/Login/Login';
+import SignUp from './components/Login/Signup';
 import NotFound from './components/NotFound';
 
 // Hooks
 import { Route, Routes } from 'react-router-dom';
-
 import { login, logout } from './redux/reducers/loginSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -20,13 +21,13 @@ function App() {
 
   const isLoggedIn = useSelector((state) => state.loginHandler.isLoggedIn)
   const dispatch = useDispatch();
-  // console.log(isLoggedIn);
 
   return (
 
     <div className="App">
+
       <Header />
-      <h1>
+      {/* <h1>
         {`${isLoggedIn}`}
       </h1>
       <button onClick={() => {
@@ -34,16 +35,17 @@ function App() {
       }}>Login</button>
       <button onClick={() => {
         dispatch(logout())
-      }}>Logout</button>
-      <CategoryHolder />
+      }}>Logout</button> */}
+      <SignUp/>
       <Routes>
         <Route index element={<Home></Home>} />
         <Route path='store/:category' element={<ProductHolder />} />
         <Route path='description/:category/:id' element={<Description />} />
-        <Route path='cart' element={<CartHolder/>}/>
+        <Route path='cart' element={isLoggedIn ? <CartHolder /> : <Login />} />
+        <Route path='cart' element={isLoggedIn ? <CartHolder /> : <Login />} />
+        <Route path='login' element={<Login />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-
 
     </div>
   );

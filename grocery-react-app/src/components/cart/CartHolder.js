@@ -1,74 +1,56 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import './CartHolder.css'
-import { useState } from 'react'
-
+import { useState, useContext } from 'react'
 import CartItem from './CartItem'
 import Payment from './Payment'
+import { useSelector } from 'react-redux'
 
-import testImg from '../../assets/images/category/fruits.png'
-
+import { useDispatch } from 'react-redux'
+import { clearCart } from '../../redux/reducers/cartSlice'
 
 function CartHolder() {
 
-    const [qty , setQty] = useState(1)
+    const dispatch = useDispatch()
 
-    const cartList = [
-        {
-            id: "1",
-            name: "product appaoiahdca",
-            price: "440.00",
-            offer: 20,
-            description: "sdjvksjd vvskjd vsj djv skjd vkjsj dkjv sjjdvunsdvj sd sidvjks jdvouiasdjvv",
-            image: testImg,
-            category: "fruits",
-            veg: true
-        },
-        {
-            id: "2",
-            name: "product appaoiahdca",
-            price: "120.00",
-            offer: 4,
-            description: "sdjvksjd vvskjd vsj djv skjd vkjsj dkjv sjjdvunsdvj sd sidvjks jdvouiasdjvv",
-            image: testImg,
-            category: "fruits",
-            veg: true
-        },
-        {
-            id: "3",
-            name: "product appaoiahdca",
-            price: "162.00",
-            offer: 12,
-            description: "sdjvksjd vvskjd vsj djv skjd vkjsj dkjv sjjdvunsdvj sd sidvjks jdvouiasdjvv",
-            image: testImg,
-            category: "fruits",
-            veg: true
-        },
-    ]
+    // const [qty, setQty] = useState(1)
+    // const [total, setTotal] = useState(0)
+    // const [totalMRP, setTotalMRP] = useState(0)
 
-    let total = 0;
+    // // const [cartList, setCartList] = useState([])
+
+    let total = 0
     let totalMRP = 0
 
-    cartList.forEach((item)=>{
-        item.finalPrice = item.price - ((item.offer/100)*item.price)
-        total = total + parseInt(item.finalPrice)
-        totalMRP = totalMRP + parseInt(item.price)
-    })
+    const cartList = useSelector((state) => state.cartHandler.cart)
+
+    //   cartList.forEach((item)=>{
+    //     totalMRP =item.qty* (totalMRP + parseInt(item.price))
+    //     total = item.qty * (total + parseInt(item.finalPrice));
+    //   })
+
+    //   console.log(totalMRP);
+
 
     return (
         <div className='CartHolder'>
             <div className='container'>
                 <div className='CartHolderWrapper'>
                     <div className='CartContainer'>
+                        <button onClick={() => {
+                            dispatch(clearCart())
+                        }}>Clear Cart</button>
                         {
                             cartList.map((item) => {
-                                return <CartItem key={item.id} item={item}/>
+                                totalMRP = item.qty * (totalMRP + parseInt(item.price))
+                                total = item.qty * (total + parseInt(item.finalPrice));
+                                return <CartItem key={Math.random()} item={item} />
                             })
                         }
                     </div>
 
                     <div className='PaymentContainer'>
-                        <Payment total={total} mrp={totalMRP}/>
+                        <Payment total={total} mrp={totalMRP} />
                     </div>
                 </div>
             </div>

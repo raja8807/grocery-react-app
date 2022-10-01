@@ -2,21 +2,18 @@ import './ProductHolder.css'
 import loading from '../../assets/loading.gif'
 
 import Product from './Product'
+import CategoryHolder from '../category/CategoryHolder';
 
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
 
-function ProductHolder() {
+function ProductHolder(props) {
 
     let params = useParams()
-    console.log(params);
+
     const [products, setProducts] = useState([])
     const [isAscActive, setAscActive] = useState(true)
     const [isLoading, setIsLoading] = useState(true)
-
-    
-    // const [currentcategory,setcategory] = useState(category)
-
 
     useEffect(() => {
         setIsLoading(true)
@@ -76,16 +73,13 @@ function ProductHolder() {
         }).then((data) => {
             if (data) {
                 data.forEach((item) => {
-                    item.finalPrice = item.price - ((item.offer / 100) * item.price)
+                    item.finalPrice = parseInt(item.price - ((item.offer / 100) * item.price))
                 })
 
                 setProducts(data.filter((item) => {
                     return item.name.toLowerCase().includes(x)
                 }))
 
-                // setProducts(products.sort((a, b) => {
-                //     return a.finalPrice - b.finalPrice
-                // }))
 
                 if (isAscActive) {
                     setProducts((prev) => {
@@ -110,6 +104,7 @@ function ProductHolder() {
     return (
         <div className='ProductHolder'>
             <div className='container'>
+                <CategoryHolder/>
                 <h2 className='sectionHeading'>{params.category}</h2>
 
                 <div className='filterWrapper'>
@@ -142,9 +137,10 @@ function ProductHolder() {
                         isLoading ?
                             <img src={loading} /> :
                             products.map((item) => {
-                                return <Product key={Math.random()} product={item} category={params.category} />
+                                return <Product key={Math.random()} product={item} category={params.category} setCartList={props.setCartList}/>
                             })
                     }
+                    {/* <Product/> */}
                 </div>
             </div>
         </div>

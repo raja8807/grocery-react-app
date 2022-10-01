@@ -22,11 +22,17 @@ function Description() {
             navigateTo(`/description/${params.category}/1`)
             return false
         }).then((product) => {
+            
             setProduct(product)
             setIsLoading(false)
+
         })
         // console.log(product);
     }, [params])
+
+    let finalPrice = parseInt(product.price - ((product.offer/100)*product.price))
+
+    console.log(finalPrice);
 
     return (
         <div className='Description'>
@@ -41,9 +47,9 @@ function Description() {
                     {
                         !isLoading && <div className='DescriptionDetailsArea'>
                             <h1>{product.name}</h1>
-                            <h2>{product.price}</h2>
-                            <h4>MRP Rs.10</h4>
-                            <h5>Yor Save Rs.100</h5>
+                            <h2>Rs.{finalPrice}</h2>
+                            <h4>MRP <del>Rs.{product.price}</del></h4>
+                            <h5>Yor Save Rs.{product.price-finalPrice}</h5>
                             <p>{product.description}</p>
                         </div>
                     }
