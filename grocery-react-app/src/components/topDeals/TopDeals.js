@@ -9,39 +9,6 @@ import { useEffect, useState } from 'react'
 
 function TopDeals() {
 
-
-    // const topDeals1 = [
-    //     {
-    //         id: 1,
-    //         name: "product name 1",
-    //         price: 500,
-    //         offer: 57,
-    //         category:"fruits"
-    //     },
-    //     {
-    //         id: 2,
-    //         name: "product name 2",
-    //         price: 300,
-    //         offer: 57,
-    //         category:"vegetables"
-    //     },
-    //     {
-    //         id: 3,
-    //         name: "product name 3",
-    //         price: 100,
-    //         offer: 57,
-    //         category:"snacks"
-
-    //     },
-    //     {
-    //         id: 4,
-    //         name: "product name 4",
-    //         price: 700,
-    //         offer: 57,
-    //         category:"meats"
-    //     }
-    // ]
-
     const [topDeals, setTopDeals] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 

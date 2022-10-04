@@ -103,8 +103,8 @@ function ProductHolder(props) {
 
     return (
         <div className='ProductHolder'>
-            <div className='container'>
                 <CategoryHolder/>
+            <div className='container'>
                 <h2 className='sectionHeading'>{params.category}</h2>
 
                 <div className='filterWrapper'>

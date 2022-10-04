@@ -36,7 +36,7 @@ function App() {
       <button onClick={() => {
         dispatch(logout())
       }}>Logout</button> */}
-      <SignUp/>
+      
       <Routes>
         <Route index element={<Home></Home>} />
         <Route path='store/:category' element={<ProductHolder />} />
@@ -44,6 +44,7 @@ function App() {
         <Route path='cart' element={isLoggedIn ? <CartHolder /> : <Login />} />
         <Route path='cart' element={isLoggedIn ? <CartHolder /> : <Login />} />
         <Route path='login' element={<Login />} />
+        <Route path='signup' element={<SignUp/>} />
         <Route path='*' element={<NotFound />} />
       </Routes>
 

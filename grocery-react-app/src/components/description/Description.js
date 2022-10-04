@@ -22,7 +22,7 @@ function Description() {
             navigateTo(`/description/${params.category}/1`)
             return false
         }).then((product) => {
-            
+
             setProduct(product)
             setIsLoading(false)
 
@@ -30,18 +30,30 @@ function Description() {
         // console.log(product);
     }, [params])
 
-    let finalPrice = parseInt(product.price - ((product.offer/100)*product.price))
+    let finalPrice = parseInt(product.price - ((product.offer / 100) * product.price))
 
     console.log(finalPrice);
 
     return (
         <div className='Description'>
             <div className='container'>
-                <button className='addToCartBtn' id='backBtn' onClick={()=>{
-                    navigateTo("/store/"+params.category)
+                <button className='addToCartBtn' id='backBtn' onClick={() => {
+                    navigateTo("/store/" + params.category)
                 }}>Back To Shopping</button>
                 <div className='DescriptionWrapper'>
                     <div className='DescriptionImageArea'>
+
+                        <div className='offerBadge'>
+                            <h5>{product.offer}%</h5>
+                            <p>Off</p>
+                        </div>
+
+                        <div className={`dotOuter ${product.veg ? "vegOuter" : "nonVegOuter"}`}>
+                            <div className={`dotInner ${product.veg ? "vegInner" : "nonVegInner"}`}>
+
+                            </div>
+                        </div>
+
                         <img src={isLoading ? loading : product.image} alt={product.name} />
                     </div>
                     {
@@ -49,7 +61,7 @@ function Description() {
                             <h1>{product.name}</h1>
                             <h2>Rs.{finalPrice}</h2>
                             <h4>MRP <del>Rs.{product.price}</del></h4>
-                            <h5>Yor Save Rs.{product.price-finalPrice}</h5>
+                            <h5>Yor Save Rs.{product.price - finalPrice}</h5>
                             <p>{product.description}</p>
                         </div>
                     }

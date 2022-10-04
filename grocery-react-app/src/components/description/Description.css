@@ -17,6 +17,7 @@
     height: 300px;
     width: 300px;
     margin: 10px;
+    position: relative;
 }
 
 .DescriptionImageArea img{

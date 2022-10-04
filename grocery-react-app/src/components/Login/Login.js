@@ -6,7 +6,7 @@ import loading from '../../assets/loading.gif'
 import { login, logout } from '../../redux/reducers/loginSlice'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 function Login() {
 
@@ -79,7 +79,7 @@ function Login() {
                                             <input type='submit' value='Login' className='LoginBtn' />
                                         </form>
                                         <h4 className='error'>{error}</h4>
-                                        <p>Not a member?</p>
+                                        <p>Not a member? <Link to='/signup' className='loginLink'>Sign Up</Link></p>
                                     </div>
                             }
                         </div> :

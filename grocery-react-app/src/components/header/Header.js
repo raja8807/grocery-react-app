@@ -1,5 +1,7 @@
 import './Header.css'
 
+import Search from './Search';
+
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../redux/reducers/loginSlice';
@@ -14,6 +16,8 @@ function Header() {
 
     const isLoggedIn = useSelector((state) => state.loginHandler.isLoggedIn)
     const user = useSelector((state) => state.loginHandler.user)
+    const cartList = useSelector((state) => state.cartHandler.cart)
+
     const dispatch = useDispatch()
 
     const [showNav, setShowNav] = useState(false)
@@ -35,13 +39,16 @@ function Header() {
                         <div className='bar'></div>
                         <div className='bar'></div>
                         <div className='bar'></div>
+                        {
+                            cartList.length > 0 && 
+                            <div className='cartDot'></div>
+                        }
                     </div>
 
                     <nav className={showNav ? "nav" : "nav hidden"}>
-                        <div className='searchBar'>
-                            <i className="fa fa-search"></i>
-                            <input className='searchBox' placeholder='Search..' type='search' />
-                        </div>
+                        
+                        <Search/>
+
                         <Link to='/' className='navLink' onClick={() => {
                             setShowNav(!showNav)
                         }}>Home</Link>
@@ -51,7 +58,9 @@ function Header() {
                         }}>Logout</Link> : <Link className='navLink' to={'login'} onClick={() => {
                             setShowNav(!showNav)
                         }}>Login</Link>}
-                        <a href='#' className='navLink'>Signup</a>
+                        <Link to={'signup'} className='navLink' onClick={() => {
+                            setShowNav(!showNav)
+                        }}>Signup</Link>
                         <Link to='/cart' className='navLink cartIcon'><CartIcon /></Link>
 
                     </nav>

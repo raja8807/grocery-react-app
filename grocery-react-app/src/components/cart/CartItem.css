@@ -6,6 +6,26 @@
     position: relative;
 }
 
+.CartDelBtn{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(128, 128, 128, 0.11);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.CartDelBtn:hover{
+    background-color: rgba(128, 128, 128, 0.363);
+    color: red;
+    
+}
+
 .CartItemWrapper{
     display: flex;
     /* justify-content: space-between; */

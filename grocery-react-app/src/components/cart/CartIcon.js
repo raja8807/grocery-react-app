@@ -8,7 +8,7 @@ function CartIcon() {
     return (
         <div className='CartIcon'>
             <div className='cartIconWrapper'>
-                <i class="fa fa-shopping-cart"> </i>
+                <i className="fa fa-shopping-cart"> </i>
                 {
                     cartList.length > 0 && <div className='CartNum'>
                         {
@@ -17,7 +17,6 @@ function CartIcon() {
                     </div>
                 }
             </div>
-
             <p className='cart-text'> Cart</p>
         </div>
     )

@@ -76,6 +76,10 @@
     border: none;
     color: white;
 }
+.loginLink{
+    color: #5FD068;
+    font-weight: bold;
+}
 
 .error {
     color: red;

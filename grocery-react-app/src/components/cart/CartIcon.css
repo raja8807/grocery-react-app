@@ -31,6 +31,15 @@
     display: none;
 }
 
+.CartIcon:hover{
+    animation: move-right 0.5s infinite ease-in-out;
+}
+
+@keyframes move-right{
+    0% {translate: 0px;}
+    100% {translate: 15px;}
+}
+
 @media screen and (max-width:768px) {
     .cart-text{
         display: initial;

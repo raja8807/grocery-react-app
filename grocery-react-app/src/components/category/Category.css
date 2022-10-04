@@ -1,6 +1,6 @@
 .category {
-    width: 180px;
-    height: 200px;
+    width: 154px;
+    height: 190px;
     background-color: #F6FBF4;
     margin: 0px 10px 10px 10px;
     display: flex;
@@ -69,8 +69,8 @@
 }
 
 .categoryImage {
-    height: 160px;
-    width: 160px;
+    height: 140px;
+    width: 140px;
     background-color: white;
 }
 

@@ -14,6 +14,11 @@ function CartItem({ item, increase, decrease }) {
 
     return (
         <div className='CartItem'>
+            <div className='CartDelBtn' onClick={() => {
+                dispatch(removeFromCart(item))
+            }}>
+                <i className="fa fa-trash-o"></i>
+            </div>
 
             <div className='CartItemWrapper'>
                 <div className='CartImageArea'>
@@ -41,9 +46,7 @@ function CartItem({ item, increase, decrease }) {
 
                 }}>+</button>
                 <h2> Rs.{finalPrice * qty} </h2>
-                <button onClick={()=>{
-                    dispatch(removeFromCart(item))
-                }}>Delete</button>
+
             </div>
             <br />
             <hr />
