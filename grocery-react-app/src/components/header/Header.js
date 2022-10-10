@@ -33,6 +33,11 @@ function Header() {
                         </Link>
                     </div>
 
+                    {
+                        isLoggedIn && 
+                        <p className='user'>Welcome <span>{user}</span></p>
+                    }
+
                     <div className='barHolder' onClick={() => {
                         setShowNav(!showNav)
                     }}>
@@ -40,14 +45,14 @@ function Header() {
                         <div className='bar'></div>
                         <div className='bar'></div>
                         {
-                            cartList.length > 0 && 
+                            cartList.length > 0 &&
                             <div className='cartDot'></div>
                         }
                     </div>
 
                     <nav className={showNav ? "nav" : "nav hidden"}>
-                        
-                        <Search/>
+
+                        <Search />
 
                         <Link to='/' className='navLink' onClick={() => {
                             setShowNav(!showNav)

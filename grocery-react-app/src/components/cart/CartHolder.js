@@ -26,7 +26,7 @@ function CartHolder() {
                         cartList.length > 0 ?
 
                         <div className='CartContainer'>
-                            <button onClick={() => {
+                            <button className='btn' onClick={() => {
                                 dispatch(clearCart())
                             }}>Clear Cart</button>
                             {

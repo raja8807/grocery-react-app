@@ -4,10 +4,12 @@ import loading from '../../assets/loading.gif'
 import Product from './Product'
 import CategoryHolder from '../category/CategoryHolder';
 
-import { useParams } from 'react-router-dom';
-import { useEffect, useState} from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 function ProductHolder(props) {
+
+    const navigateTo = useNavigate()
 
     let params = useParams()
 
@@ -18,11 +20,13 @@ function ProductHolder(props) {
     useEffect(() => {
         setIsLoading(true)
         setAscActive(true)
-        fetch('https://my-json-server.typicode.com/raja8807/grocery-app-data-' + params.category +"/" + params.category).then((response) => {
+        fetch('https://my-json-server.typicode.com/raja8807/grocery-app-data-' + params.category + "/" + params.category).then((response) => {
             if (response.ok) {
                 return response.json()
+            } else {
+                navigateTo('/*')
             }
-            return false
+
         }).then((data) => {
             if (data) {
                 data.forEach((item) => {
@@ -65,7 +69,7 @@ function ProductHolder(props) {
         setIsLoading(true)
 
         let x = e.target.value
-        fetch('https://my-json-server.typicode.com/raja8807/grocery-app-data-'+params.category+"/"+ params.category).then((response) => {
+        fetch('https://my-json-server.typicode.com/raja8807/grocery-app-data-' + params.category + "/" + params.category).then((response) => {
             if (response.ok) {
                 return response.json()
             }
@@ -103,7 +107,7 @@ function ProductHolder(props) {
 
     return (
         <div className='ProductHolder'>
-                <CategoryHolder/>
+            <CategoryHolder />
             <div className='container'>
                 <h2 className='sectionHeading'>{params.category}</h2>
 
@@ -117,7 +121,7 @@ function ProductHolder(props) {
                     </div>
 
                     {
-                        !isLoading && (products.length==0 ? <h4 className='productLength' id='error'>Nothing To Show</h4> : <h4 className='productLength'>Showing {products.length} products</h4>)
+                        !isLoading && (products.length == 0 ? <h4 className='productLength' id='error'>Nothing To Show</h4> : <h4 className='productLength'>Showing {products.length} products</h4>)
                     }
 
                     <div className='sortWrapper'>
@@ -137,7 +141,7 @@ function ProductHolder(props) {
                         isLoading ?
                             <img src={loading} /> :
                             products.map((item) => {
-                                return <Product key={Math.random()} product={item} category={params.category} setCartList={props.setCartList}/>
+                                return <Product key={Math.random()} product={item} category={params.category} setCartList={props.setCartList} />
                             })
                     }
                     {/* <Product/> */}
