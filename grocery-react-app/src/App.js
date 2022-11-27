@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/header/Header';
 import ProductHolder from './components/product/ProductHolder';
 import CategoryHolder from './components/category/CategoryHolder';
+
 // import TopDeals from './components/topDeals/TopDeals';
 import Home from './components/Home';
 import Description from './components/description/Description';
@@ -20,6 +21,7 @@ import { useSelector, useDispatch } from 'react-redux';
 function App() {
 
   const isLoggedIn = useSelector((state) => state.loginHandler.isLoggedIn)
+
   const dispatch = useDispatch();
 
   return (
@@ -42,7 +44,7 @@ function App() {
         <Route path='store/:category' element={<ProductHolder />} />
         <Route path='description/:category/:id' element={<Description />} />
         <Route path='cart' element={isLoggedIn ? <CartHolder /> : <Login />} />
-        <Route path='cart' element={isLoggedIn ? <CartHolder /> : <Login />} />
+        {/* <Route path='cart' element={isLoggedIn ? <CartHolder /> : <Login />} /> */}
         <Route path='login' element={<Login />} />
         <Route path='signup' element={<SignUp/>} />
         <Route path='*' element={<NotFound />} />

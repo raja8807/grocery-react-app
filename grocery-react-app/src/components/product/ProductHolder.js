@@ -21,6 +21,7 @@ function ProductHolder(props) {
         setIsLoading(true)
         setAscActive(true)
         fetch('https://my-json-server.typicode.com/raja8807/grocery-app-data-' + params.category + "/" + params.category).then((response) => {
+        // fetch('http://localhost:5000/api').then((response) => {
             if (response.ok) {
                 return response.json()
             } else {
@@ -28,6 +29,7 @@ function ProductHolder(props) {
             }
 
         }).then((data) => {
+            console.log(data)
             if (data) {
                 data.forEach((item) => {
                     item.finalPrice = item.price - ((item.offer / 100) * item.price)

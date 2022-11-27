@@ -15,7 +15,9 @@ function Header() {
     const navigateTo = useNavigate()
 
     const isLoggedIn = useSelector((state) => state.loginHandler.isLoggedIn)
+
     const user = useSelector((state) => state.loginHandler.user)
+    
     const cartList = useSelector((state) => state.cartHandler.cart)
 
     const dispatch = useDispatch()
